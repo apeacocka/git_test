@@ -1,3 +1,6 @@
+from tkinter import Y
+
+
 print("Welcome to the tip calculator.")
 total = input("What was the total bill? $")
 tip = input("What percentage tip would you like to give? 10, 12 or 15? ")
@@ -55,7 +58,31 @@ print("\n\n\n")
 height = input("enter your height in m: ")
 weight = input("enter your weight in kg: ")
 
-h1 = float(height)
-w2 = int(weight)
-bmi = w2 % (h1 ** 2)
-print(bmi)
+bmi = int(weight) / float(height) ** 2
+bmi_int = int(bmi)
+print(bmi_int)
+
+#To round use the round function, you can specify the number of places after a comma
+round(8 / 3, 2)
+#Use two division symbols // to eliminate the decimal point (makes it an integer)
+#Everytime you do regular the division the result is a floating point number
+#By using a variable you can continue doing calculations
+result = 4 / 2
+#This divides the result above by the number 2
+result /= 2
+#User scores a point
+score = 0
+#Add or subtract from total
+score += 1
+#F strings let you mix different types, you place the different types in {}
+#print(f"your score is {score}")
+
+#Your life in weeks
+age = input("What is your current age?")
+age_as_int = int(age)
+years_remaining = 90 - age_as_int
+days_remaining = years_remaining * 365
+weeks_remaining = years_remaining * 52
+months_remaining = years_remaining * 12
+print(f"You have {days_remaining} days, {weeks_remaining} weeks, and {months_remaining} months left.")
+
