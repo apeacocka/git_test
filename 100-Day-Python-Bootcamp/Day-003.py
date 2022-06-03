@@ -1,3 +1,67 @@
+#Conditional if/else statements, indentation is very important
+#if condition: ****You must use the colon
+# do this
+#else: *****You must use the colon
+# do this
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+if height >= 120:
+  print("You can ride the rollercoaster!")
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+#Comparison Operators
+# > Greater than
+# < less than
+# >= Greater than or equal to
+# <= less than or equal to
+# == Equal to
+# != Not equal to
+print("\n\n")
+#Modulo divides one number by another and gives you the remainder %
+number = int(input("Which number do you want to check? "))
+if number % 2 > 0:
+  print("This is an odd number.")
+else:
+  print("This is an even number.")
+
+
+print("\n\n")
+
+#Nested if/else statements, once the first condition is passed we can check for another condition
+#if condition:
+# if another condition:
+#   do this
+# else:
+#   do this
+#else:
+# do this
+
+#if/ elif/ else
+#if condition1:
+# do a
+#elif condition2:
+# do b
+#else:
+# do this
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+  age = int(input("What is your age? "))
+  if age < 12:
+    print("Please pay $5.")
+  elif age <= 18:
+    print("Please pay $7.")
+  if age <= 18:
+    print("Please pay $7.")
+  else:
+    print("Please pay $12.")
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
+
+
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 
