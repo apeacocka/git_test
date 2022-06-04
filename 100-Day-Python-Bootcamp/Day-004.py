@@ -1,3 +1,37 @@
+#Random Module
+# you need to type 'import randon'
+# To create a module make another file create a variable or whatever print(filename.variablename)
+import random
+
+random_integer = random.randint(1 ,10)
+print(random_integer)
+
+random_float = random.random()
+print (random_float)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rock = '''
     _______
 ---'   ____)
