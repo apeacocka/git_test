@@ -1,7 +1,7 @@
 #Conditional if/else statements, indentation is very important
-#if condition: ****You must use the colon
+#if condition: ou must use the colon
 # do this
-#else: *****You must use the colon
+#else: You must use the colon
 # do this
 print("Welcome to the rollercoaster!")
 height = int(input("What is your height in cm? "))
@@ -53,8 +53,6 @@ if height >= 120:
     print("Please pay $5.")
   elif age <= 18:
     print("Please pay $7.")
-  elif age <= 18:
-    print("Please pay $7.")
   else:
     print("Please pay $12.")
 else:
@@ -82,12 +80,139 @@ print("\n\n")
 #Day 3.3 Leap Year
 year = int(input("Which year do you want to check? "))
 if year % 4 == 0:
-  if year % 100 != 0:
-    print("Leap year.")
-  if year % 400 == 0:
+  if year % 100 == 0:
+    if year % 400 == 0:
+      print("Leap year.")
+    else:
+      print("Not a leap year.")
+  else:
     print("Leap year.")
 else:
   print("Not a leap year.")
+
+print("\n\n")
+
+#Multiple If statements in succession
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+bill = 0
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+  age = int(input("What is your age? "))
+  if age < 12:
+    bill = 5
+  elif age <= 18:
+    bill = 7
+  else:
+    bill = 12
+  
+  wants_photo = input("Do you want a photo taken? Y or N.")
+  if wants_photo == "Y":
+    bill += 3
+  
+  print(f"Your final bil is ${bill}")
+
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
+print("\n\n")
+
+#3.4 Pizza Order
+
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M, or L ")
+add_pepperoni = input("Do you want pepperoni? Y or N ")
+extra_cheese = input("Do you want extra cheese? Y or N ")
+
+to_pay = 0
+
+if size == "S":
+  to_pay += 15
+elif size == "M":
+  to_pay += 20
+else:
+  to_pay += 25
+
+if add_pepperoni == "Y":
+  if size == "S":
+    to_pay +=2
+  else:
+    to_pay += 3
+
+if extra_cheese == "Y":
+  to_pay += 1
+
+print(f"Your final bill is: ${to_pay}")
+
+print("\n\n")
+
+#Logical Operators
+#To check for multiple conditions in the same line of code
+# and - both must be true
+# or - just one needs to be true
+# not - 
+
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+bill = 0
+
+if height >= 120:
+  print("You can ride the rollercoaster!")
+  age = int(input("What is your age? "))
+  if age < 12:
+    bill = 5
+    print("Child tickets are $5.")
+  elif age <= 18:
+    bill = 7
+    print("Youth tickets are $7.")
+  elif age >= 45 and age <= 55:
+    print("Everything is going to be ok. Have a free ride on us!")
+  else:
+    bill = 12
+    print("Adult tickets are $12.")
+  
+  wants_photo = input("Do you want a photo taken? Y or N. ")
+  if wants_photo == "Y":
+    bill += 3
+  
+  print(f"Your final bill is ${bill}")
+
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
+print("\n\n")
+
+#Day 3.5 Love Calculator
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+n1 = name1.lower() + name2.lower()
+
+t1 = n1.count("t")
+r1 = n1.count("r")
+u1 = n1.count("u")
+e1 = n1.count("e")
+
+true1 = t1 + r1 + u1 + e1
+
+l1 = n1.count("l")
+o1 = n1.count("o")
+v1 = n1.count("v")
+e2 = n1.count("e")
+
+love1 = l1 + o1 + v1 + e2
+
+true_love = int(str(true1) + str(love1))
+
+if true_love < 10 or true_love > 90:
+  print(f"Your score is {true_love}, you go together like coke and mentos.")
+elif true_love >= 40 or true_love <= 50:
+  print(f"You score is {true_love}, you are alright together.")
+else:
+  print(f"Your score is {true_love}")
 
 
 
