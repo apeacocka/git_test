@@ -5,9 +5,6 @@
 #Loops allows us to execute the same line of code multiple times
 #Inside a foor loop = indented
 #A for loop will run for as many times as there are items in the list
-from turtle import st
-
-from more_itertools import nth
 
 
 fruits = ["Apple", "Peach", "Pear"]

@@ -16,6 +16,7 @@ def caesar(start_text, shift_amount, cipher_direction):
 
 from caesar_art import logo
 should_continue = True
+print(logo)
 
 while should_continue:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
