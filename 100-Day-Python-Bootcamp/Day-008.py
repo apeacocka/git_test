@@ -1,3 +1,43 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+def caesar(start_text, shift_amount, cipher_direction):
+  end_text = ""
+  if cipher_direction == "decode":
+    shift_amount *= -1
+  for char in start_text:
+    #TODO-3: What happens if the user enters a number/symbol/space?
+    #Can you fix the code to keep the number/symbol/space when the text is encoded/decoded?
+    #e.g. start_text = "meet me at 3"
+    #end_text = "•••• •• •• 3"
+    position = alphabet.index(char)
+    new_position = position + shift_amount
+    end_text += alphabet[new_position]
+    
+  print(f"Here's the {cipher_direction}d result: {end_text}")
+
+from caesar_art import logo
+
+
+#TODO-4: Can you figure out a way to ask the user if they want to restart the cipher program?
+#e.g. Type 'yes' if you want to go again. Otherwise type 'no'.
+#If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again?
+#Hint: Try creating a while loop that continues to execute the program if the user types 'yes'. 
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+#TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet?
+#Try running the program and entering a shift number of 45.
+#Add some code so that the program continues to work even if the user enters a shift number greater than 26. 
+#Hint: Think about how you can use the modulus (%).
+
+caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+
+
+
+
+
 #Functions that allow you to give them input
 #Arguments and Parameters
 
@@ -9,9 +49,122 @@
 #   then do this
 #   finally do this
 
-def my_function():
-    print("Monkey")
-    print("Leopard")
-    print("Giraffe")
 
-my_function()
+# def my_function():
+#     print("Monkey")
+#     print("Leopard")
+#     print("Giraffe")
+
+# my_function()
+
+#Functions that allow for input.
+#The variable 'name' is the parameter and the value it contains is the argument
+#Paramter is the name of the data being passed in, the argument is the actual value of the data
+
+# def greet_with_name(name):
+#     print(f"Hello {name}")
+#     print(f"How do you do {name}?")
+
+# greet_with_name("Tom")
+
+#Functions with more than 1 input
+# def greet_with(name, location):
+#     print(f"Hello {name}")
+#     print(f"What is it like in {location}")
+# #These are positional arguments in python
+# greet_with("Aaron Peacock", "Nowhere")
+
+#To avoid positional erros, use Keyword Argumnets
+
+#Keyword Arguments
+
+# def my_fucntion(a, b, c):
+#     print(f"Print {a}")
+#     print(f"Print {b}")
+#     print(f"Print {c}")
+
+# my_fucntion(c="Angela", b="London", a="Dog")
+
+# import math
+# from turtle import width
+
+# from cairo import HINT_STYLE_SLIGHT
+
+# def paint_calc(height, width, cover):
+#     area = height * width
+#     num_of_cans = math.ceil(area / cover)
+#     print(f"You'll need {num_of_cans} cans of paint")
+
+# test_h = int(input("Height of wall: "))
+# test_w = int(input("Width of wall: "))
+# coverage = 5
+# paint_calc(height=test_h, width=test_w, cover=coverage)
+
+
+#Prime number checker
+
+# def prime_checker(number):
+#     is_prime = True
+#     for i in range(2, number):
+#         if number % i == 0:
+#             is_prime = False
+#     if is_prime:
+#             print("It's a prime number")
+#     else:
+#         print("It's not a prime number")
+
+# n = int(input("Check this number: "))
+# prime_checker(number=n)
+
+#Caesar Cipher Part 1
+
+#To stop it from producing an error at the end of the alphabet, just put it twice in the variable.
+#The index() function stops at the first item it finds
+# alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+# text = input("Type your message:\n").lower()
+# shift = int(input("Type the shift number:\n"))
+
+# def encrypt(start_text, shift_amount):
+#     end_text = ""
+#     for letter in start_text:
+#         position  = alphabet.index(letter)
+#         new_position = position + shift_amount
+#         new_letter = alphabet[new_position]
+#         end_text += new_letter
+#     print(f"The encoded text is {end_text}")
+
+# def decrypt(end_text, shift_amount):
+#     deend_text = ""
+#     for letter in end_text:
+#         position  = alphabet.index(letter)
+#         new_position = position - shift_amount
+#         new_letter = alphabet[new_position]
+#         deend_text += new_letter
+#     print(f"The decoded text is {deend_text}")
+
+# if direction == "encode":
+#     encrypt(start_text=text, shift_amount=shift)
+# elif direction == "decode":
+#     decrypt(end_text=text, shift_amount=shift)
+
+#Cipher Part 3
+
+# alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+# text = input("Type your message:\n").lower()
+# shift = int(input("Type the shift number:\n"))
+
+# def caesar(start_text, shift_amount, cipher_direction):
+#     end_text = ""
+#     if cipher_direction == "decode":
+#         shift_amount *= -1
+#     for letter in start_text:
+#         position = alphabet.index(letter)
+#         new_position = position + shift_amount
+#         end_text += alphabet[new_position]
+#     print(f"The {cipher_direction}d text is {end_text}")
+
+# caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
